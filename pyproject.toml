@@ -6,7 +6,10 @@ readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
     "langgraph>=0.2.19",
+    "openai>=1.45.0",
     "peewee>=3.17.6",
     "pyppeteer>=2.0.0",
-    "ruff>=0.6.4",
 ]
+
+[tool.uv]
+dev-dependencies = ["ruff>=0.6.4"]

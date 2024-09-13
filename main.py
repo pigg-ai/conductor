@@ -1,3 +1,6 @@
 from src.core.logger import logger
 
-logger.critical("This is a critical message")
+
+if __name__ == "__main__":
+    logger.debug("Hello, World!")
+    pass
