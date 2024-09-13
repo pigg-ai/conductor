@@ -8,4 +8,5 @@ dependencies = [
     "langgraph>=0.2.19",
     "peewee>=3.17.6",
     "pyppeteer>=2.0.0",
+    "ruff>=0.6.4",
 ]
