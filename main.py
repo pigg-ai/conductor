@@ -1,4 +1,4 @@
-from src.core.agent import run
+from conductor.core.agent import run
 from dotenv import load_dotenv
 
 

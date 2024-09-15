@@ -9,8 +9,8 @@ from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph import END, START, StateGraph, MessagesState
 from langgraph.prebuilt import ToolNode
 
-from src.core.logger import logger
-from src.core.env import settings
+from conductor.core.logger import logger
+from conductor.core.env import settings
 
 
 @tool
