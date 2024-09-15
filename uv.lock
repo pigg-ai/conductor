@@ -454,6 +454,7 @@ dependencies = [
     { name = "pydantic-settings" },
     { name = "pyppeteer" },
     { name = "python-dotenv" },
+    { name = "typer" },
 ]
 
 [package.dev-dependencies]
@@ -471,6 +472,7 @@ requires-dist = [
     { name = "pydantic-settings", specifier = ">=2.5.2" },
     { name = "pyppeteer", specifier = ">=2.0.0" },
     { name = "python-dotenv", specifier = ">=1.0.1" },
+    { name = "typer", specifier = ">=0.9.4" },
 ]
 
 [package.metadata.requires-dev]
