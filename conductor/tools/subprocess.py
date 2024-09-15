@@ -41,7 +41,6 @@ class SubprocessTool(ToolMessage):
                 timeout=self.max_timeout,
                 check=True,
             )
-            print(result.stdout)
 
             # Return the output of the command
             return result.stdout
