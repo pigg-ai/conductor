@@ -1,10 +1,12 @@
 FROM python:3.10-slim-bookworm
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
 
-# Copy the project into the image
-ADD . /app
+COPY conductor /app
+COPY uv.lock /app
+COPY pyproject.toml /app
+COPY main.py /app
 
-# Sync the project into a new environment, using the frozen lockfile
+
 WORKDIR /app
 RUN uv sync --frozen
 
