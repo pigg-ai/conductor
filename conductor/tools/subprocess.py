@@ -4,12 +4,15 @@ import shlex
 
 from langroid.agent.tool_message import ToolMessage
 
+processes_state = {}
+
 
 class SubprocessTool(ToolMessage):
     request: str = "subprocess_tool"
     purpose: str = """
     Allowing agents to manipulate subprocesses directly.
     """
+    process_name: str
     cmd: str
     max_timeout: int = 30  # Default timeout in seconds
 
@@ -18,32 +21,34 @@ class SubprocessTool(ToolMessage):
         return [
             (
                 "I wanna look at current directory",
-                cls(cmd="ls -al"),
+                cls(process_name="current_dir", cmd="ls -al"),
             ),
         ]
 
     @classmethod
     def instructions(cls) -> str:
         return """
-        Use this tool/function to run arbitrary shell commands directly.
+        Use this tool/function to utilize process manager 
         """
 
-    def handle(self) -> str:
+    def handle(self) -> tuple[str, str]:
         try:
-            # Split the command string into a list of arguments
-            cmd_args = shlex.split(self.cmd)
+            global processes_state
+            if self.process_name in processes_state:
+                process = processes_state[self.process_name]
+                stdout, stderr = process.communicate(timeout=self.max_timeout)
+            else:
+                process = subprocess.Popen(
+                    shlex.split(self.cmd),
+                    stdout=subprocess.PIPE,
+                    stderr=subprocess.PIPE,
+                    shell=True,  # kinda bad
+                )
+                processes_state[self.process_name] = process
 
-            # Run the command with a timeout
-            result = subprocess.run(
-                cmd_args,
-                capture_output=True,
-                text=True,
-                timeout=self.max_timeout,
-                check=True,
-            )
+                stdout, stderr = process.communicate(timeout=self.max_timeout)
 
-            # Return the output of the command
-            return result.stdout
+            return stdout, stderr
         except subprocess.TimeoutExpired:
             return f"Command timed out after {self.max_timeout} seconds"
         except subprocess.CalledProcessError as e:

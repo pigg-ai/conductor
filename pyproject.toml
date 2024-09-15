@@ -9,6 +9,7 @@ dependencies = [
     "litestar>=2.11.0",
     "openai>=1.45.0",
     "peewee>=3.17.6",
+    "pexpect>=4.9.0",
     "playwright>=1.47.0",
     "pydantic-settings>=2.5.2",
     "pytest-playwright>=0.5.2",

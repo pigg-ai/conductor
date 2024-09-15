@@ -4,7 +4,7 @@ from conductor.tools.io import IOTool
 from conductor.tools.exec import ExecTool
 from conductor.tools.subprocess import SubprocessTool
 from conductor.tools.browser import BrowserTool
-from conductor.core.context import subprocessmanager_context
+
 
 lr.utils.logging.setup_colored_logging()
 
@@ -41,7 +41,9 @@ def chat(tools: bool = False) -> None:
         llm_delegate=True,
         single_round=False,
     )
-    root_task.run()
+    root_task.run(
+        "use the subprocess tool to create a next js starter app called next-demo, use flags to skip all interactive prompts"
+    )
 
 
 @app.command()
