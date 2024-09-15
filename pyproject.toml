@@ -1,7 +1,7 @@
 [project]
 name = "conductor"
 version = "0.1.0"
-description = "Add your description here"
+description = "AI software engineering agent that can actually ship, not just writing to-do apps."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
@@ -9,8 +9,9 @@ dependencies = [
     "litestar>=2.11.0",
     "openai>=1.45.0",
     "peewee>=3.17.6",
+    "playwright>=1.47.0",
     "pydantic-settings>=2.5.2",
-    "pyppeteer>=2.0.0",
+    "pytest-playwright>=0.5.2",
     "python-dotenv>=1.0.1",
     "typer>=0.9.4",
 ]

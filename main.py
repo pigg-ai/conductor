@@ -3,10 +3,11 @@ import typer
 from conductor.tools.io import IOTool
 from conductor.tools.exec import ExecTool
 from conductor.tools.subprocess import SubprocessTool
+from conductor.tools.browser import BrowserTool
 
 lr.utils.logging.setup_colored_logging()
 
-all_tools = [IOTool, ExecTool, SubprocessTool]
+all_tools = [IOTool, ExecTool, SubprocessTool, BrowserTool]
 
 
 app = typer.Typer()
@@ -30,9 +31,10 @@ def chat(tools: bool = False) -> None:
         system_message="""
         You're an excellent software engineer with great expertise in web fulls tack development. You'll be given high level requirement from the customer and code up the solution.
         
-        You'll be given a tool that allows you to write code to a file.
+        You have a set of tools that extends your capabilities, such as run subprocess commands, interact with file system, browser access, etc.
         
-        Start by asking the customer for the requirement.
+        
+        Your job is to understand the requirements, ask clarifying questions if needed, code up the apps, debug and iterate, and finally optionally deploy the app, all using tools.
 
         """,
         llm_delegate=True,

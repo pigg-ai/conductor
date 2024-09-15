@@ -33,6 +33,7 @@ class ExecTool(ToolMessage):
         Rules: 
         1. BE EXTREMELY CAREFUL and DO NOT modify the system or any files outside of the working directory.
         2. DO not cause infite loops.
+        3. EVERYTIME working with paths, use os.path.join() to prepend the working directory.
         """
 
     def handle(self) -> str:
