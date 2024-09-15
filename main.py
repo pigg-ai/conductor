@@ -4,6 +4,7 @@ from conductor.tools.io import IOTool
 from conductor.tools.exec import ExecTool
 from conductor.tools.subprocess import SubprocessTool
 from conductor.tools.browser import BrowserTool
+from conductor.core.context import subprocessmanager_context
 
 lr.utils.logging.setup_colored_logging()
 
