@@ -1,4 +1,4 @@
-FROM python:3.10-slim-bookworm
+FROM python:3.11.6-slim-bookworm
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/uv
 
 COPY conductor /app
