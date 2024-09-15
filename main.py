@@ -1,6 +1,8 @@
-from src.core.logger import logger
+from src.core.agent import run
+from dotenv import load_dotenv
 
 
 if __name__ == "__main__":
-    logger.debug("Hello, World!")
+    load_dotenv()
+    run()
     pass
