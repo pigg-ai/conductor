@@ -5,10 +5,6 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "langchain-anthropic>=0.2.0",
-    "langchain-community>=0.3.0",
-    "langchain-openai>=0.1.23",
-    "langgraph>=0.2.19",
     "litestar>=2.11.0",
     "openai>=1.45.0",
     "peewee>=3.17.6",
@@ -18,8 +14,4 @@ dependencies = [
 ]
 
 [tool.uv]
-dev-dependencies = [
-    "bs4>=0.0.2",
-    "jupyter>=1.1.1",
-    "ruff>=0.6.4",
-]
+dev-dependencies = ["bs4>=0.0.2", "jupyter>=1.1.1", "ruff>=0.6.4"]
