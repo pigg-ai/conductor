@@ -1,12 +1,12 @@
 import langroid as lr
 import typer
 from conductor.tools.io import IOTool
+from conductor.tools.exec import ExecTool
+from conductor.tools.subprocess import SubprocessTool
 
 lr.utils.logging.setup_colored_logging()
 
-all_tools = [
-    IOTool,
-]
+all_tools = [IOTool, ExecTool, SubprocessTool]
 
 
 app = typer.Typer()
