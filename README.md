@@ -1,7 +1,7 @@
 # Conductor
 
-The AI software engineer.
+The AI software engineer that can actually ship, not just writing todo apps.
 
-## Architecture
+## Getting Started
 
-Concretely, conductor orchestrates software engineers to help people ship applications with natural language. Conductor has access to file system, chat memory, docs, and browser to debug and iterate.
+Install [uv](https://github.com/astral-sh/**uv**), andthen run `uv sync` at the root directory for dependencies.
