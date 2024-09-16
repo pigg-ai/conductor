@@ -14,7 +14,7 @@ class SubprocessTool(ToolMessage):
     """
     process_name: str
     cmd: str
-    max_timeout: int = 30  # Default timeout in seconds
+    max_timeout: int = 10  # Default timeout in seconds
 
     @classmethod
     def examples(cls) -> List["ToolMessage" | Tuple[str, "ToolMessage"]]:
@@ -38,8 +38,10 @@ class SubprocessTool(ToolMessage):
                 process = processes_state[self.process_name]
                 stdout, stderr = process.communicate(timeout=self.max_timeout)
             else:
+                args = shlex.split(self.cmd)
+                print(args)
                 process = subprocess.Popen(
-                    shlex.split(self.cmd),
+                    args,
                     stdout=subprocess.PIPE,
                     stderr=subprocess.PIPE,
                     shell=True,  # kinda bad
@@ -47,7 +49,7 @@ class SubprocessTool(ToolMessage):
                 processes_state[self.process_name] = process
 
                 stdout, stderr = process.communicate(timeout=self.max_timeout)
-
+            print(stdout, stderr)
             return stdout, stderr
         except subprocess.TimeoutExpired:
             return f"Command timed out after {self.max_timeout} seconds"

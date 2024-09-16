@@ -42,7 +42,7 @@ def chat(tools: bool = False) -> None:
         single_round=False,
     )
     root_task.run(
-        "use the subprocess tool to create a next js starter app called next-demo, use flags to skip all interactive prompts"
+        "use the subprocess tool to create a next js starter app called next-demo, defualt timeout 10s"
     )
 
 

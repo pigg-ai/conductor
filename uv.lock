@@ -447,6 +447,7 @@ dependencies = [
     { name = "pydantic-settings" },
     { name = "pytest-playwright" },
     { name = "python-dotenv" },
+    { name = "tenacity" },
     { name = "typer" },
 ]
 
@@ -467,6 +468,7 @@ requires-dist = [
     { name = "pydantic-settings", specifier = ">=2.5.2" },
     { name = "pytest-playwright", specifier = ">=0.5.2" },
     { name = "python-dotenv", specifier = ">=1.0.1" },
+    { name = "tenacity", specifier = ">=9.0.0" },
     { name = "typer", specifier = ">=0.9.4" },
 ]
 
@@ -3046,6 +3048,15 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/94/15/4a041424c7187f41cce678f5a02189b244e9aac61a18b45cd415a3a470f3/sympy-1.13.2.tar.gz", hash = "sha256:401449d84d07be9d0c7a46a64bd54fe097667d5e7181bfe67ec777be9e01cb13", size = 7532926 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c1/f9/6845bf8fca0eaf847da21c5d5bc6cd92797364662824a11d3f836423a1a5/sympy-1.13.2-py3-none-any.whl", hash = "sha256:c51d75517712f1aed280d4ce58506a4a88d635d6b5dd48b39102a7ae1f3fcfe9", size = 6189289 },
+]
+
+[[package]]
+name = "tenacity"
+version = "9.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/cd/94/91fccdb4b8110642462e653d5dcb27e7b674742ad68efd146367da7bdb10/tenacity-9.0.0.tar.gz", hash = "sha256:807f37ca97d62aa361264d497b0e31e92b8027044942bfa756160d908320d73b", size = 47421 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/b6/cb/b86984bed139586d01532a587464b5805f12e397594f19f931c4c2fbfa61/tenacity-9.0.0-py3-none-any.whl", hash = "sha256:93de0c98785b27fcf659856aa9f54bfbd399e29969b0621bc7f762bd441b4539", size = 28169 },
 ]
 
 [[package]]
