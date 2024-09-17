@@ -20,3 +20,7 @@ dependencies = [
 
 [tool.uv]
 dev-dependencies = ["jupyter>=1.1.1", "ruff>=0.2.2"]
+
+[tool.pyright] # for zed
+venvPath = "."
+venv = ".venv"
